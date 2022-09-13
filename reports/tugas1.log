@@ -18,17 +18,31 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 plt.figure()
-sns.distplot(data)
+sns.distplot(dataset)
 plt.show()
 ------------------
 
 [0;31m[0m
-[0;31mNameError[0mTraceback (most recent call last)
-[0;32m<ipython-input-9-d81467dde424>[0m in [0;36m<module>[0;34m[0m
+[0;31mValueError[0mTraceback (most recent call last)
+[0;32m<ipython-input-9-b92ed9deb590>[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0mplt[0m[0;34m.[0m[0mfigure[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0msns[0m[0;34m.[0m[0mdistplot[0m[0;34m([0m[0mdata[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0msns[0m[0;34m.[0m[0mdistplot[0m[0;34m([0m[0mdataset[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mplt[0m[0;34m.[0m[0mshow[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'data' is not defined
-NameError: name 'data' is not defined
+[0;32m/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py[0m in [0;36mdistplot[0;34m(a, bins, hist, kde, rug, fit, hist_kws, kde_kws, rug_kws, fit_kws, color, vertical, norm_hist, axlabel, label, ax, x)[0m
+[1;32m   2634[0m [0;34m[0m[0m
+[1;32m   2635[0m     [0;31m# Make a a 1-d float array[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 2636[0;31m     [0ma[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0masarray[0m[0;34m([0m[0ma[0m[0;34m,[0m [0mfloat[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2637[0m     [0;32mif[0m [0ma[0m[0;34m.[0m[0mndim[0m [0;34m>[0m [0;36m1[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2638[0m         [0ma[0m [0;34m=[0m [0ma[0m[0;34m.[0m[0msqueeze[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/generic.py[0m in [0;36m__array__[0;34m(self, dtype)[0m
+[1;32m   1991[0m [0;34m[0m[0m
+[1;32m   1992[0m     [0;32mdef[0m [0m__array__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mdtype[0m[0;34m:[0m [0mNpDtype[0m [0;34m|[0m [0;32mNone[0m [0;34m=[0m [0;32mNone[0m[0;34m)[0m [0;34m->[0m [0mnp[0m[0;34m.[0m[0mndarray[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1993[0;31m         [0;32mreturn[0m [0mnp[0m[0;34m.[0m[0masarray[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_values[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mdtype[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1994[0m [0;34m[0m[0m
+[1;32m   1995[0m     def __array_wrap__(
+
+[0;31mValueError[0m: could not convert string to float: 'Iris-setosa'
+ValueError: could not convert string to float: 'Iris-setosa'
 
